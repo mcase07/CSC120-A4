@@ -8,11 +8,21 @@ public class Engine {
         this.maxFuel = mFuel;
         this.currentFuel = cFuel;
         }
+        
+    public void refuel(){
+        this.currentFuel = this.maxFuel;
     }
-//do same below for each file
-    public static void main(String [] args){
-        Engine newEngine = new Engine(FuelType.STEAM, 100.0, 80.0);
-        System.out.println(newEngine.fuelType);
+    public Boolean go(){
+        this.currentFuel = currentFuel - 10;
+        System.out.println(currentFuel);
+        return this.currentFuel > 0;
+    }
+    public static void main(String[] args) {
+        Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0, 100.0);
+        while (myEngine.go()) {
+            System.out.println("Choo choo!");
+        }
+        System.out.println("Out of fuel.");
     }
 }
 
