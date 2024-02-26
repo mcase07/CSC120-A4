@@ -52,6 +52,7 @@ public class Train {
         }
         return seats;
     }
+    // a for loop that compiles the manifests from each car and prints 
     public String printManifest(){
         for (int i = 0; i < this.numCars; i++){
             this.manifest = this.cars.get(i).printManifest();
